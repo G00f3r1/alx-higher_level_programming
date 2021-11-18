@@ -4,7 +4,7 @@ from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
     arg_len = len(argv) - 1
-    
+
     if arg_len == 3:
 
         a = int(argv[1])
