@@ -7,6 +7,8 @@
  * @head: the linked list
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
+void reverse(listint_t **head_ref);
+
 
 int is_palindrome(listint_t **head)
 {
@@ -17,7 +19,7 @@ int is_palindrome(listint_t **head)
 
 	listint_t *start = *head;
 	listint_t *end = NULL;
-	int count = 0;
+/*	int count = 0;
 
 	while (current != NULL)
 	{
@@ -28,8 +30,10 @@ int is_palindrome(listint_t **head)
 	}
 	new_head = prev;
 	end = new_head;
+*/
 
-
+	reverse(&head);
+	end = head;
 	while (start->next != NULL && end->next != NULL)
 	{
 		if (start->n == end->n)
@@ -47,4 +51,21 @@ int is_palindrome(listint_t **head)
 	return (1);
 }
 
-
+void reverse(listint_t **head_ref)
+{
+    struct Node* prev = NULL;
+    struct Node* current = *head_ref;
+    struct Node* next = NULL;
+    while (current != NULL) {
+        // Store next
+        next = current->next;
+ 
+        // Reverse current node's pointer
+        current->next = prev;
+ 
+        // Move pointers one position ahead.
+        prev = current;
+        current = next;
+    }
+    *head_ref = prev;
+}
