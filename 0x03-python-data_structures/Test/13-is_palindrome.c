@@ -2,16 +2,20 @@
 #include <stdlib.h>
 #include "lists.h"
 
+
 /**
- * reverse_listint - Reverses a singly-linked list.
- * @head: the list to reverse.
+ * reverse_listint - Reverses a singly-linked listint_t list.
+ * @head: A pointer to the starting node of the list to reverse.
  *
- * Return: the reversed list.
+ * Return: A pointer to the head of the reversed list.
  */
+int is_palindrome(listint_t **head);
+listint_t *reverse_listint(listint_t **head);
+
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *current = *head;
-	listint_t *next;
+	listint_t *current = *head; 
+	listint_t *next; 
 	listint_t *prev = NULL;
 
 	while (current)
@@ -28,9 +32,10 @@ listint_t *reverse_listint(listint_t **head)
 
 /**
  * is_palindrome - Checks if a singly linked list is a palindrome.
- * @head: the linked list.
+ * @head: A pointer to the head of the linked list.
  *
- * Return: 0 if it is not a palindrome, 1 if it is a palindrome
+ * Return: If the linked list is not a palindrome - 0.
+ *         If the linked list is a palindrome - 1.
  */
 int is_palindrome(listint_t **head)
 {
