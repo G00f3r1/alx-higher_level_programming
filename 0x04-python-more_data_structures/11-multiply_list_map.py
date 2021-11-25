@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 
 
-def multiply_by_2(a_dictionary):
-    new_dictionary = a_dictionary.copy()
-
-    for key, value in new_dictionary.items():
-        new_dictionary[key] = v * 2
-
-    return new_dictionary
+def multiply_list_map(my_list=[], number=0):
+    return list(map(lambda i: i * number, my_list))
