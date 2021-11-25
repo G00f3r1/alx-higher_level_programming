@@ -2,6 +2,10 @@
 
 
 def square_matrix_simple(matrix=[]):
+    matrix_len = len(matrix)
+    new_matrix = []
 
-    new_matrix = list(map(lambda numbers: list(map(lambda number: (number**2), numbers)), matrix ))
+    if matrix_len > 0:
+        for number in matrix[:]:
+            new_matrix.append(list(map(lambda x: x ** 2, number)))
     return new_matrix
