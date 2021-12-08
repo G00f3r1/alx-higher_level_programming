@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+"""Square Class
+"""
 
 
 class Square:
-    """Square Class
-
-    A Square Class
-
+    """Empty class with size private attribute
     """
     def __init__(self, size=0):
         """__init__
@@ -25,4 +24,4 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self._size = size
+        self.__size = size
