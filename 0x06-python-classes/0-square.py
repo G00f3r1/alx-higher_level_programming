@@ -2,4 +2,9 @@
 
 
 class Square:
+    """Square Class
+
+    A Square Class
+
+    """
     pass

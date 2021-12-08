@@ -2,8 +2,25 @@
 
 
 class Square:
-    def __init__(self, size=0):
+    """Square Class
 
+    A Square Class
+
+    """
+    def __init__(self, size=0):
+        """__init__
+
+        The __init__ method initializes the size value of the square.
+
+        Attributes:
+            size (:obj:`int`, optional): The size of the square.
+
+        Raises:
+            TypeError: If `size` type is not `int`.
+
+            ValueError: If `size` is less than `0`.
+
+        """
         if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
@@ -11,6 +28,11 @@ class Square:
         self._size = size
 
     def area(self):
+        """area
+
+        Returns the current square area
+
+        """
         return self._size ** 2
 
     @property
@@ -19,6 +41,19 @@ class Square:
 
     @size.setter
     def size(self, value):
+        """siz
+
+        The size setter method update the size value of the square.
+
+        Attributes:
+            size (int): The new size of the square.
+
+        Raises:
+            TypeError: If `size` type is not `int`.
+
+            ValueError: If `size` is less than `0`.
+
+        """
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
