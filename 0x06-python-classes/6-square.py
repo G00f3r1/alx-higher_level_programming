@@ -3,7 +3,7 @@
 
 
 class Square:
-    """ Empty class with size private attribute
+    """ Square Class
     """
     def __init__(self, size=0, position=(0, 0)):
         """
@@ -20,23 +20,17 @@ class Square:
         self.position = position
 
     def area(self):
-        """
-        Returns the area of the square
-        """
+        """Returns the area of the square"""
         return (self.__size * self.__size)
 
     @property
     def size(self):
-        """
-        size getter. Handle size errors
-        """
+        """Gets the current size of the square."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        size setter. Set the size square
-        """
+        """Sets size to value."""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
@@ -44,9 +38,7 @@ class Square:
         self.__size = value
 
     def my_print(self):
-        """
-        Print a square with the character # at position given
-        """
+        """Print a square with the # character"""
         if self.__size == 0:
             print()
             return
@@ -58,25 +50,16 @@ class Square:
 
     @property
     def position(self):
-        """
-        position setter. Set the position of square
-        """
+        """Gets the current position of the square."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """
-        Handle position with errors
-        """
-        if type(value) != tuple:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif isinstance(value[0], int) is False:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif isinstance(value[1], int) is False:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] < 0 or value[1] < 0:
+        """Sets position to value."""
+        if (type(value) != tuple or len(value) != 2 or
+                isinstance(value[0], int) is False or
+                isinstance(value[1], int) is False or
+                value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
