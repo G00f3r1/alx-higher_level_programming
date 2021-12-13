@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """This Rectangle class"""
+    """This a Rectangle class"""
 
     number_of_instances = 0
     print_symbol = "#"
