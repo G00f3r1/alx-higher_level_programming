@@ -103,8 +103,8 @@ class Rectangle:
             return rect_1
         elif rec_1 < rec_2:
             return rect_2
-        elif rec_1 == rec_2:
-            return rec_1
+        else:
+            return rect_1
 
     @classmethod
     def square(cls, size=0):
