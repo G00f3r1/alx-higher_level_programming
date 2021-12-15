@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module Defines say_my_name function"""
 
 
 def say_my_name(first_name, last_name=""):
