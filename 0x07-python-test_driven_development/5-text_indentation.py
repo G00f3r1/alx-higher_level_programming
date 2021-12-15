@@ -9,8 +9,15 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for char in text:
-        if char == "." or char == "?" or char == ":":
-            print(char, end="\n\n")
-        else:
-            print(char, end="")
+    new_text = ""
+    string = text[:]
+    for delm in ".?:":
+        new_text = string.split(delm)
+        string = ""
+        for i in new_text:
+            i = i.strip(" ")
+            if string == "":
+                string = i + delm
+            else:
+                string = string + "\n\n" + i + delm
+    print(string)
