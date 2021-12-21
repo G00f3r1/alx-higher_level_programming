@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Define function inherits_from"""
 
 
 def inherits_from(obj, a_class):
