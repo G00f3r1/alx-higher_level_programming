@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""Define funciton add_attribute"""
 
 
 def add_attribute(obj, alttrb, value):
-    """Define a function add_attribute
+    """function that adds a new attribute to an object if it’s possible
     Args:
         obj (any): The object to add an attribute to
         alt (str): The name of the added attribute
