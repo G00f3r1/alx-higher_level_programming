@@ -10,8 +10,9 @@ if os.path.exists("add_item.json"):
     arg_list = load_from_json_file('add_item.json')
 else:
     arg_list = list()
-    n = len(sys.argv)
+    
+n = len(sys.argv)
 
-    for i in range(1, n):
-        arg_list.append(sys.argv[i])
+for i in range(1, n):
+    arg_list.append(sys.argv[i])
 save_to_json_file(arg_list, "add_item.json")
