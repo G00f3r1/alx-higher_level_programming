@@ -4,7 +4,7 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """function that inserts a line of text to a file,
-        after each line containing a specific string 
+        after each line containing a specific string.
     Args:
         filename (str): The name of the file.
         search_string (str): The string to search for within the file.
@@ -18,4 +18,3 @@ def append_after(filename="", search_string="", new_string=""):
                 text += new_string
     with open(filename, "w") as w:
         w.write(text)
-
