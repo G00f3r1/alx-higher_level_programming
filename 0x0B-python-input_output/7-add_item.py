@@ -10,7 +10,7 @@ if os.path.exists("add_item.json"):
     arg_list = load_from_json_file('add_item.json')
 else:
     arg_list = list()
-    
+
 n = len(sys.argv)
 
 for i in range(1, n):
