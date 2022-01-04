@@ -6,9 +6,13 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """Definition of the class Square"""
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialize the Square class"""
+        """Initialize the Square class
+        Args:
+            size(int): the size of the Square
+            x(int): the x position of the Square
+            y(int): the y position of the Square
+        """
         super().__init__(size, size, x, y)
-        self.size = size
 
     def __str__(self):
         """Return the representation of Square"""

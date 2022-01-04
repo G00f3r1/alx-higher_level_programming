@@ -15,19 +15,19 @@ class Rectangle(Base):
             id (int): the id of Rectangle
         """
         super().__init__(id)
-        if isinstance(width, int) is False:
+        if type(width) is not int:
             raise TypeError("width must be an integer")
         if width < 0:
             raise ValueError("width must be > 0")
-        if isinstance(height, int) is False:
+        if type(height) is not int:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be > 0")
-        if isinstance(x, int) is False:
+        if type(x) is not int:
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
-        if isinstance(y, int) is False:
+        if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
