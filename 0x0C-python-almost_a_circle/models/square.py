@@ -12,12 +12,12 @@ class Square(Rectangle):
             x(int): the x position of the Square
             y(int): the y position of the Square
         """
-        super().__init__(size, size, x, y)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """Return the representation of Square"""
         return ("[Square] " + "(" + str(self.id) + ") " + str(self.x) +
-                " / " + str(self.y) + " - " + str(self.width))
+                "/" + str(self.y) + " - " + str(self.width))
 
     @property
     def size(self):

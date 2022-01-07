@@ -17,11 +17,11 @@ class Rectangle(Base):
         super().__init__(id)
         if type(width) is not int:
             raise TypeError("width must be an integer")
-        if width < 0:
+        if width <= 0:
             raise ValueError("width must be > 0")
         if type(height) is not int:
             raise TypeError("height must be an integer")
-        if height < 0:
+        if height <= 0:
             raise ValueError("height must be > 0")
         if type(x) is not int:
             raise TypeError("x must be an integer")
@@ -47,7 +47,7 @@ class Rectangle(Base):
         """Set the width of the Rectangle"""
         if isinstance(value, int) is False:
             raise TypeError("width must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
@@ -61,7 +61,7 @@ class Rectangle(Base):
         """Set the height of Rectangle"""
         if isinstance(value, int) is False:
             raise TypeError("height must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
@@ -119,21 +119,61 @@ class Rectangle(Base):
         args_len = len(args)
         if args_len > 0:
             if args_len >= 5:
+                if type(args[1]) is not int:
+                    raise TypeError("width must be an integer")
+                if args[1] <= 0:
+                    raise ValueError("width must be > 0")
+                if type(args[2]) is not int:
+                    raise TypeError("height must be an integer")
+                if args[2] <= 0:
+                    raise ValueError("height must be > 0")
+                if type(args[3]) is not int:
+                    raise TypeError("x must be an integer")
+                if args[3] < 0:
+                    raise ValueError("x must be >= 0")
+                if type(args[4]) is not int:
+                    raise TypeError("y must be an integer")
+                if args[4] < 0:
+                    raise ValueError("y must be >= 0")
                 super().__init__(args[0])
                 self.__width = args[1]
                 self.__height = args[2]
                 self.__x = args[3]
                 self.__y = args[4]
             if args_len == 4:
+                if type(args[1]) is not int:
+                    raise TypeError("width must be an integer")
+                if args[1] <= 0:
+                    raise ValueError("width must be > 0")
+                if type(args[2]) is not int:
+                    raise TypeError("height must be an integer")
+                if args[2] <= 0:
+                    raise ValueError("height must be > 0")
+                if type(args[3]) is not int:
+                    raise TypeError("x must be an integer")
+                if args[3] < 0:
+                    raise ValueError("x must be >= 0")
                 super().__init__(args[0])
                 self.__width = args[1]
                 self.__height = args[2]
                 self.__x = args[3]
             if args_len == 3:
+                if type(args[1]) is not int:
+                    raise TypeError("width must be an integer")
+                if args[1] <= 0:
+                    raise ValueError("width must be > 0")
+                if type(args[2]) is not int:
+                    raise TypeError("height must be an integer")
+                if args[2] <= 0:
+                    raise ValueError("height must be > 0")
                 super().__init__(args[0])
                 self.__width = args[1]
                 self.__height = args[2]
             if args_len == 2:
+                if type(args[1]) is not int:
+                    raise TypeError("width must be an integer")
+                if args[1] <= 0:
+                    raise ValueError("width must be > 0")
                 super().__init__(args[0])
                 self.__width = args[1]
             if args_len == 1:
@@ -143,12 +183,28 @@ class Rectangle(Base):
                 if key == "id":
                     self.id = value
                 if key == "width":
+                    if type(value) is not int:
+                        raise TypeError(key + " must be an integer")
+                    if value <= 0:
+                        raise ValueError(key + " must be > 0")
                     self.__width = value
                 if key == "height":
+                    if type(value) is not int:
+                        raise TypeError(key + " must be an integer")
+                    if value <= 0:
+                        raise ValueError(key + " must be > 0")
                     self.__height = value
                 if key == "x":
+                    if type(value) is not int:
+                        raise TypeError(key + " must be an integer")
+                    if value <= 0:
+                        raise ValueError(key + " must be >= 0")
                     self.__x = value
                 if key == "y":
+                    if type(value) is not int:
+                        raise TypeError(key + " must be an integer")
+                    if value <= 0:
+                        raise ValueError(key + " must be >= 0")
                     self.__y = value
 
     def to_dictionary(self):

@@ -22,7 +22,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
         if list_dictionaries is None:
-            return []
+            return "[]"
         else:
             return json.dumps(list_dictionaries)
 
@@ -31,13 +31,14 @@ class Base:
         """function that writes the JSON string representation
             of list_objs to a file"""
         file_name = cls.__name__ + ".json"
-        with open("Rectangle.json", "w") as file:
+        with open(file_name, "w") as file:
             if list_objs is None:
-                file.write(cls.to_json_string(None))
-            lists = []
-            for items in list_objs:
-                lists.append(items.to_dictionary())
-            file.write(cls.to_json_string(lists))
+                file.write("[]")
+            else:
+                lists = []
+                for items in list_objs:
+                    lists.append(items.to_dictionary())
+                file.write(cls.to_json_string(lists))
 
     def from_json_string(json_string):
         """function that returns the list of the JSON string representation
