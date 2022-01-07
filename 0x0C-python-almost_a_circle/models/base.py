@@ -19,6 +19,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
         if list_dictionaries is None:
@@ -40,6 +41,7 @@ class Base:
                     lists.append(items.to_dictionary())
                 file.write(cls.to_json_string(lists))
 
+    @staticmethod
     def from_json_string(json_string):
         """function that returns the list of the JSON string representation
             json_string"""
