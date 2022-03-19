@@ -5,7 +5,7 @@ and displays the body of the response
 """
 
 from sys import argv
-from urllib import request
+from urllib import request, error
 
 
 if __name__ == "__main__":
